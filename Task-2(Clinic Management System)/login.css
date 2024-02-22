@@ -1,0 +1,228 @@
+/* Google Font Import - Poformsins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./login_backgroundimage.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+.container {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.container:hover{
+    box-shadow: 0 0px 20px rgb(9, 155, 223);
+    border: 2px solid rgb(47, 192, 245);
+    
+}
+
+.container .forms {
+    display: flex;
+    align-items: center;
+    width: 200%;
+    height: 500px;
+    transition: height 0.2s ease;
+}
+
+.container .form {
+    width: 50%;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 25px;
+    transition: margin-left 0.2s ease;
+}
+
+.container.active .login {
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.2s ease, opacity 0.15s ease;
+}
+
+.container .signup {
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+.container.active .signup {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.container.active .forms {
+    height: 540px;
+}
+
+.container .form .title {
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.form .title::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color: rgba(45, 155, 245, 0.703);
+    border-radius: 25px;
+}
+
+.form .input-field {
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+}
+
+.input-field input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) {
+    border-bottom-color: rgba(45, 155, 245, 0.703);
+}
+
+.input-field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid)~i {
+    color: rgba(45, 155, 245, 0.703);
+}
+
+.input-field i.icon {
+    left: 0;
+}
+
+.input-field i.showHidePw {
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form .checkbox-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.checkbox-text .checkbox.content {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-content input {
+    margin: 0 8px -2px 4px;
+    accent-color: rgba(45, 155, 245, 0.703);
+}
+
+.form .text {
+    color: #333;
+    font-size: 14px;
+}
+
+.form a.text {
+    color: rgba(5, 86, 152, 0.888);
+    text-decoration: none;
+}
+
+.form a:hover {
+    text-decoration: underline;
+}
+
+.form .button {
+    margin-top: 35px;
+}
+
+.form .button input {
+    border: none;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 10px;
+    background-color: rgba(45, 155, 245, 0.849);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button input:hover {
+    background-color: rgba(7, 140, 249, 0.936);
+}
+
+.form .login-signup {
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 50%;
+    }
+    .container .form {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 430px) {
+    .container {
+        max-width: 80%;
+    }
+    .container .form {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 320px) {
+
+    body{
+        background-size: cover;
+    }
+    .container {
+        max-width: 80%;
+        height: 450px;
+    
+    
+    }
+    .container .form {
+        width: 50%;
+    }
+}
+
